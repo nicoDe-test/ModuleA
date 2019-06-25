@@ -26,6 +26,7 @@ package com.apiomat.nativemodule.modulea;
 
 
 import com.apiomat.nativemodule.basics.*;
+import com.apiomat.nativemodule.moduleb.*;
 /**
 * Generated class for your E2A data model
 *
@@ -53,6 +54,9 @@ public class E2A extends com.apiomat.nativemodule.moduleb.E2B
     public static final String MODEL_NAME = "E2A";
 
     /** class specific attributes */
+    private Double aDoubleList = null;
+    private com.apiomat.nativemodule.moduleb.E2B aParentAttribute = null;
+    private String aString = null;
     /**
      * Protected constructor; to create a new instance, use the createObject() method
      */
@@ -75,6 +79,56 @@ public class E2A extends com.apiomat.nativemodule.moduleb.E2B
     public String getModelName( )
     {
         return MODEL_NAME;
+    }
+
+    public Double getADoubleList()
+    {
+         return this.aDoubleList;
+    }
+
+    public void setADoubleList( Double arg )
+    {
+        this.aDoubleList = arg;
+    }
+
+    public com.apiomat.nativemodule.moduleb.E2B getAParentAttribute()
+    { 
+        if(this.aParentAttribute == null)
+        {
+            /* do this by reflection to be backward compatible */
+            try
+            {
+                java.lang.reflect.Method m = com.apiomat.nativemodule.AbstractClientDataModel.class.getMethod( "loadReference", String.class,  Class.class );
+                this.aParentAttribute =  ( com.apiomat.nativemodule.moduleb.E2B ) m.invoke( this, "aParentAttribute", com.apiomat.nativemodule.moduleb.E2B.class );
+            }
+            catch ( java.lang.NoSuchMethodException | java.lang.SecurityException | java.lang.IllegalAccessException | java.lang.IllegalArgumentException | java.lang.reflect.InvocationTargetException e )
+            {
+                 //silently ignored
+            }
+        }   
+        return this.aParentAttribute;
+    }
+
+    public void postAParentAttribute( final com.apiomat.nativemodule.moduleb.E2B refData )
+    {
+        addReference( "aParentAttribute", refData );
+        this.aParentAttribute = refData;
+    }
+
+    public void removeAParentAttribute( final com.apiomat.nativemodule.moduleb.E2B refData )
+    {
+        removeReference( "aParentAttribute", refData );
+        this.aParentAttribute = null;
+    }
+
+    public String getAString()
+    {
+         return this.aString;
+    }
+
+    public void setAString( String arg )
+    {
+        this.aString = arg;
     }
 
 }
